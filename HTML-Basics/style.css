@@ -1,0 +1,29 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+p {
+    color: #9975D8 !important;
+    font-size: 22px;
+    font-weight: 900;
+}
+input[type="text"] {
+    background-color: black;
+    color: #fff;
+}
+input {
+    background-color: green;
+    color: #fff;
+    border-radius: 10px;
+}
+.redcolor{
+    color: red;
+}
+.highlighttext {
+    color: goldenrod;
+    font-style: italic;
+}
+#firstname {
+    background-color: lightgrey;
+    color: #000;
+}
