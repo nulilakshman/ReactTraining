@@ -27,3 +27,6 @@ input {
     background-color: lightgrey;
     color: #000;
 }
+.error{
+    color: red;
+}

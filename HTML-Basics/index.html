@@ -42,7 +42,7 @@
                 <td>
                     <input id="firstname" type="text" placeholder="Enter first name" maxlength="45" />
                     <!-- readonly disabled value="Lakshman" -->
-
+                    <span class="error" id="spnFirstName"></span>
                 </td>
             </tr>
             <tr>
@@ -111,13 +111,49 @@
             <tr>
 
                 <td colspan="2" align="center">
-                    <input type="submit" value="Save" />
-                    <input type="button" value="Cancel" />
+                    <input type="submit" value="Save" onclick="return validate();" />
+                    <input type="button" value="Cancel" onclick="alertMessage();" />
                     <input type="reset" value="Reset" />
                 </td>
             </tr>
         </table>
     </form>
+
+    <script type="text/javascript">
+
+        function alertMessage() {
+            alert('Welcome to javascript !!!')
+        }
+
+        function validate() {
+            var isFormValid = false;
+
+            console.log('Validate Method Triggered !!!')
+            //    console.info('Validate Method Triggered !!!')
+            // console.error('Validate Method Triggered !!!')
+            // console.warn('Validate Method Triggered !!!')
+            var element = document.getElementById('firstname');
+            console.log(element)
+
+            element = document.getElementsByTagName('input');
+            console.log(element)
+
+            var firstname = document.getElementById('firstname').value;
+            if (firstname == "") {
+                //alert('Please enter firstname')
+                document.getElementById('spnFirstName').innerHTML = "Please enter first name."
+            }
+            else{
+                document.getElementById('spnFirstName').innerHTML = ""
+            }
+
+
+            return isFormValid;
+        }
+
+
+    </script>
+
 </body>
 
 </html>
