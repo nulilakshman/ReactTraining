@@ -1,0 +1,157 @@
+const name="test"
+const paragraph='Its one of the robust, feature-rich online compilers for Javascript language. Getting started with the OneCompilers Javascript editor is easy and fast.';
+
+const first_name="test"
+
+const firstName="test" // Camel case
+const FirstName="text" // pascal case
+
+console.log("the entered first name is "+firstName+".")
+
+console.log(`the entered first name is ${firstName}.`)
+
+function multiplyby2(a) {
+  
+return a*2;  
+  
+}
+
+console.log(multiplyby2(5))
+
+console.log('************ES6************')
+
+const arrowmultiplyby2 = a => a*2;  
+  
+console.log(arrowmultiplyby2(5))
+
+
+const arrowmultiplyby2Multiline = a => {
+  b=a*2; 
+  console.log(b);
+  //return b;  
+}
+  
+console.log(arrowmultiplyby2Multiline(5))
+
+
+const arrowmultiply = (a,b) => {
+  c=a*b; 
+  return c;  
+}
+  
+console.log(arrowmultiply(5,6))
+
+
+const arrowmultiplyDefaultParameters = (a,b=1) => {
+  c=a*b; 
+  return c;  
+}
+  
+console.log(arrowmultiplyDefaultParameters(5,10))
+
+console.log("123"===123)
+
+
+
+
+=================================
+
+
+const numbers=[3,6,10,23,44,200]
+let sum=0
+for(let n of numbers){
+  sum=sum+n;
+}
+
+//console.log(sum)
+
+const manipulatedValues= numbers.map(function(x){
+ return x*2;
+})
+
+console.log(manipulatedValues)
+
+
+const manipulatedValuesWithArrow= numbers.map(x => {
+ return x*2;
+})
+
+console.log(manipulatedValuesWithArrow)
+
+const manipulatedValuesWithArrowWithSkip= numbers.map(x => {
+  
+  if(x%2===0){
+    return x;
+  } else {
+    return 0;
+  }
+  
+})
+
+console.log(manipulatedValuesWithArrowWithSkip)
+
+===============================
+
+const numbers=[3,6,10,23,44,200,10]
+
+
+const result= numbers.find(x => x===10)
+console.log(result)
+
+
+================================REST Parameter==================
+
+const numbers=[15,6,10,23,44,200,10]
+
+//const a=numbers[0],
+  //    b=numbers[1]
+ 
+const [a,b,c, ...d]=numbers
+
+const w=numbers
+ 
+
+console.log(a)
+console.log(b)
+console.log(c)
+console.log(d)
+console.log(w)
+
+console.log('****************Rest Parameters************')
+const sumall = (a,b,...c)=>{
+  
+console.log(a)
+console.log(b)
+console.log(c)
+
+  
+}
+
+sumall(1000,2000,3000,4000,5000,6000)
+
+
+
+
+const array1 = [1,2,3]
+const array2 = [4,5,6]
+
+const array3 = [...array1, ...array2, 7,8,9]
+
+//console.log(array3)
+
+const obj={ name:"test",
+           place:"HYd"}
+
+const obj1={ age:22}
+const obj2={...obj, ...obj1};
+console.log(obj2);
+
+console.log("end");
+
+
+
+
+
+
+
+
