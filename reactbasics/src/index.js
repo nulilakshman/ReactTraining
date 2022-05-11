@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './Home';
-
+import Contactus from './Contactus';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Home />
+    {/* <Home /> */}
+    <Contactus></Contactus>
   </React.StrictMode>
 );
 
