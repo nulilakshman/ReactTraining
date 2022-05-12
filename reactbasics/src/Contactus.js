@@ -6,6 +6,7 @@ const Contactus = () => {
     const b = 10;
     const c = { ssn: '', place: '', dob: '' };
     //c.ssn;
+    const [showMessage, setShowMessage] = useState(false);
     const [firstname, setFirstname] = useState('')
     const [userdetails, setUserdetails] = useState({
         firstname: '',
@@ -18,13 +19,35 @@ const Contactus = () => {
         gender: ''
     });
 
+    const [errors, setErrors] = useState({
+        lastname: '',
+        city: '',
+        address: '',
+        username: '',
+        password: '',
+        gender: ''
+    });
+
     const onInput = (event) => {
         //const obj = userdetails ; Wrong approach
         //const obj = Object.assign({}, userdetails);
         const obj = { ...userdetails };
         obj[event.target.name] = event.target.value;
         setUserdetails({ ...obj });
+    }
 
+    const validateFields = () => {
+        const errorFields = { ...errors };
+        let isValid = true;
+        debugger
+        if (userdetails.lastname === "") {
+            errorFields.lastname = "Please enter lastname";
+            isValid = false;
+        }
+
+        setErrors({...errorFields});
+
+        return isValid;
     }
 
     const onFirstNameChanged = (event) => {
@@ -36,7 +59,11 @@ const Contactus = () => {
     }
 
     const onsave = () => {
-        console.log({ ...userdetails })
+        
+        if(validateFields()){
+            console.log({ ...userdetails })
+            setShowMessage(true);
+        }
     }
 
     return (
@@ -44,6 +71,13 @@ const Contactus = () => {
 
             <h1 className="row">Functional Component</h1>
             <button onClick={onButtonClicked} >Click Here !!!</button>
+            {
+                showMessage ? <div className="alert alert-success" role="alert">
+                    Details saved successfully !!!
+                </div>
+                    : null
+            }
+
             <br></br>
             <div className="row">
                 <div className="col-12">
@@ -53,6 +87,8 @@ const Contactus = () => {
                 <div className="col-12">
                     <span>Last Name</span>
                     <input type="text" name="lastname" onChange={onInput} value={userdetails.lastname}></input>
+                    <span>{errors.lastname}</span>
+
                 </div>
                 <div className="col-12">
                     <span>User Name</span>
