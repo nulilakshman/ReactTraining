@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Contactus = () => {
 
@@ -28,6 +28,14 @@ const Contactus = () => {
         gender: ''
     });
 
+    // const test=()=>{
+    //     console.log('useeffect ')
+    // }
+
+    useEffect(()=>{
+        console.log('useeffect ')
+    }, [firstname, userdetails.lastname]);
+
     const onInput = (event) => {
         //const obj = userdetails ; Wrong approach
         //const obj = Object.assign({}, userdetails);
@@ -45,7 +53,7 @@ const Contactus = () => {
             isValid = false;
         }
 
-        setErrors({...errorFields});
+        setErrors({ ...errorFields });
 
         return isValid;
     }
@@ -59,8 +67,8 @@ const Contactus = () => {
     }
 
     const onsave = () => {
-        
-        if(validateFields()){
+
+        if (validateFields()) {
             console.log({ ...userdetails })
             setShowMessage(true);
         }

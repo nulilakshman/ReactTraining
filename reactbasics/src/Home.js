@@ -12,11 +12,24 @@ class Home extends Component {
             address: '',
             username: '',
             password: '',
-            gender:''
+            gender: ''
         }
     }
 
-   onInput = (event) => {
+    componentDidUpdate =()=>{
+        console.log('componentDidUpdate')
+    }
+
+    componentWillUnmount =()=>{
+        console.log('componentWillUnmount')
+    } 
+
+    componentDidMount = () => {
+        console.log('componentDidMount')
+    }
+
+
+    onInput = (event) => {
         console.log(`${event.target.name}:${event.target.value}`)
         //this.setState({ username: event.target.value })
         const obj = { ...this.state }
@@ -24,7 +37,7 @@ class Home extends Component {
         console.log(obj)
         obj[controlname] = event.target.value;
         console.log('Modified Object', obj)
-        this.setState({...obj})
+        this.setState({ ...obj })
         // event
     }
 
@@ -42,7 +55,7 @@ class Home extends Component {
         this.setState({ name: 'value changed' });
     }
 
-    onPrint = ()=>{
+    onPrint = () => {
         console.log(this.state)
     }
 
@@ -70,8 +83,8 @@ class Home extends Component {
                 <input type="text" onChange={this.onCityChanged} value={this.state.city} ></input>
                 <br />
                 Gender:
-                <input type="radio" onChange={this.onInput} value="Male" name="gender" checked={this.state.gender==="Male"} />Male
-                <input type="radio" onChange={this.onInput} value="Female" name="gender" checked={this.state.gender==="Female"} />Female
+                <input type="radio" onChange={this.onInput} value="Male" name="gender" checked={this.state.gender === "Male"} />Male
+                <input type="radio" onChange={this.onInput} value="Female" name="gender" checked={this.state.gender === "Female"} />Female
                 <br></br>
                 <button onClick={this.onPrint} >Print Values</button>
             </div>
