@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './Home';
 import Contactus from './Contactus';
+import Users from './Users';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const list = [1, 2, 3, 4, 5]
@@ -22,16 +23,20 @@ const displayAlert = () => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Home city="hyderabad"
+
+    {/* <Home city="hyderabad"
       list={list}
       user={user}
       {...user}
-      triggerAlert={displayAlert} />
+      triggerAlert={displayAlert} /> */}
     {/* <Contactus city="hyderabad"
       list={list}
       user={user}
       {...user}
       triggerAlert={displayAlert} ></Contactus> */}
+
+    <Users></Users>
+
   </React.StrictMode>
 );
 
