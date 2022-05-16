@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const Contactus = () => {
+const Contactus = (props) => {
 
+    
     const a = ''
     const b = 10;
     const c = { ssn: '', place: '', dob: '' };
@@ -41,7 +42,7 @@ const Contactus = () => {
         axios.get('https://reqres.in/api/users?page=2').then((x) => {
             console.log('Response Received !!')
             console.log(x.data.data)
-          
+
         }).catch(e => {
             console.log('Error !!!');
         })
@@ -75,7 +76,14 @@ const Contactus = () => {
     }
 
     const onButtonClicked = () => {
-        getUsers();
+        console.log(props)
+        console.log("props.city", props.city)
+        console.log("props.list", props.list)
+        console.log("props.user", props.user)
+        console.log("props.user.name:", props.user.name)
+        debugger
+        props.triggerAlert();
+       // getUsers();
         // alert('Button Triggered !!!')
     }
 
@@ -93,7 +101,7 @@ const Contactus = () => {
 
             <h1 className="row">Functional Component</h1>
 
-            <button onClick={onButtonClicked} >Click Here !!!</button>
+            <button name="btnClick" id="btnClick" data-a="" data-hyd="" data-p="" onClick={onButtonClicked} >Click Here !!!</button>
             {
                 showMessage ? <div className="alert alert-success" role="alert">
                     Details saved successfully !!!

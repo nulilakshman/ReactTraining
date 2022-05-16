@@ -7,11 +7,31 @@ import Home from './Home';
 import Contactus from './Contactus';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+const list = [1, 2, 3, 4, 5]
+const user = {
+  name: 'test',
+  phonenumber: '9959654144',
+  country: 'India'
+}
+
+const displayAlert = () => {
+
+  alert('Iam in Index page');
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <Home /> */}
-    <Contactus></Contactus>
+    <Home city="hyderabad"
+      list={list}
+      user={user}
+      {...user}
+      triggerAlert={displayAlert} />
+    {/* <Contactus city="hyderabad"
+      list={list}
+      user={user}
+      {...user}
+      triggerAlert={displayAlert} ></Contactus> */}
   </React.StrictMode>
 );
 

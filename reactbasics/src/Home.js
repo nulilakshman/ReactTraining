@@ -51,8 +51,14 @@ class Home extends Component {
 
 
     onButtonClicked = () => {
-        alert('Button Triggered !!!')
-        this.setState({ name: 'value changed' });
+      //  alert('Button Triggered !!!')
+        //this.setState({ name: 'value changed' });
+        console.log(this.props)
+        console.log("props.city", this.props.city)
+        console.log("props.list", this.props.list)
+        console.log("props.user", this.props.user)
+        console.log("props.user.name:", this.props.user.name)
+        this.props.triggerAlert();
     }
 
     onPrint = () => {
