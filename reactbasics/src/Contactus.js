@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const Contactus = () => {
@@ -32,9 +33,20 @@ const Contactus = () => {
     //     console.log('useeffect ')
     // }
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log('useeffect ')
     }, [firstname, userdetails.lastname]);
+
+    const getUsers = () => {
+        axios.get('https://reqres.in/api/users?page=2').then((x) => {
+            console.log('Response Received !!')
+            console.log(x.data.data)
+          
+        }).catch(e => {
+            console.log('Error !!!');
+        })
+        console.log('Method called')
+    }
 
     const onInput = (event) => {
         //const obj = userdetails ; Wrong approach
@@ -63,7 +75,8 @@ const Contactus = () => {
     }
 
     const onButtonClicked = () => {
-        alert('Button Triggered !!!')
+        getUsers();
+        // alert('Button Triggered !!!')
     }
 
     const onsave = () => {
@@ -75,9 +88,11 @@ const Contactus = () => {
     }
 
     return (
+
         <div className="container">
 
             <h1 className="row">Functional Component</h1>
+
             <button onClick={onButtonClicked} >Click Here !!!</button>
             {
                 showMessage ? <div className="alert alert-success" role="alert">
