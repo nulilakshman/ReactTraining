@@ -1,8 +1,13 @@
 import React from "react"
+import { useParams } from 'react-router-dom'
 
 const About = () => {
+    let params = useParams()
     return (
-        <h1>About Component</h1>
+        <React.Fragment>
+            <h2>About Component</h2>
+            Value passed : {params.id}
+        </React.Fragment>
     )
 }
 
