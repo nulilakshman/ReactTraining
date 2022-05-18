@@ -12,6 +12,7 @@ function App() {
       <Link to='/home'>Home</Link> |
       <Link to='/about'>About Us</Link> |
       <Link to='/about/10'>About Us With value</Link> |
+      <Link to='/users'>Users</Link> |
       <Link to='/contactus'>Contact Us</Link> |
       <Link to='/contactus-1'>Error</Link>
 

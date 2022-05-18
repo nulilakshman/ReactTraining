@@ -5,6 +5,7 @@ import App from './App';
 import Home from './Home';
 import About from './About';
 import Dashboard from './Dashboard';
+import Users from './Users';
 import ErrorPage from './ErrorPage';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -18,6 +19,7 @@ root.render(
       <Routes>
         <Route path='/' element={<App />} >
           <Route path='/home' element={<Home />} ></Route>
+          <Route path='/users' element={<Users />} ></Route>
           <Route path='/about' element={<About />} >
             <Route path=':id' element={<About />} ></Route>
           </Route>
