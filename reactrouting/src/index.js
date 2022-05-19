@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import UserInformation from './UserInformation';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,8 +21,12 @@ root.render(
         <Route path='/' element={<App />} >
           <Route path='/home' element={<Home />} ></Route>
           <Route path='/users' element={<Users />} ></Route>
+          <Route path='/userinfo' element={<UserInformation />} >
+            <Route path='uname/:name/uid/:id' element={<About />}></Route>
+          </Route>
           <Route path='/about' element={<About />} >
             <Route path=':id' element={<About />} ></Route>
+            <Route path='username/:name/uid/:id' element={<About />}></Route>
           </Route>
           <Route path='/contactus' element={<p>Contact Here</p>} ></Route>
           <Route path='*' element={<ErrorPage></ErrorPage>} ></Route>

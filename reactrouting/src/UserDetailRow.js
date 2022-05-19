@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const UserDetailRow = (props) => {
     return (
@@ -11,6 +12,9 @@ const UserDetailRow = (props) => {
             </td>
             <td>
                 {props.email}
+            </td>
+            <td>
+                <Link to={`/userinfo/uname/${props.first_name}/uid/${props.id}`}>View</Link>
             </td>
         </tr>
     )

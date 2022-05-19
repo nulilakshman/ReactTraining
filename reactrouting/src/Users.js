@@ -70,6 +70,9 @@ const Users = () => {
                         <td>
                             Email
                         </td>
+                        <td>
+                            Actions
+                        </td>
                     </tr>
                 </thead>
                 <tbody>
