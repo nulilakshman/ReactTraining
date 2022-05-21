@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import UserDetailRow from './UserDetailRow'
+import { getAllUsers } from '../../api/userapi'
 
 const Users = () => {
 
@@ -8,19 +9,19 @@ const Users = () => {
     const [rows, setRows] = useState([]);
 
     // useEffect(async() => {
-       
+
     // }, [])
     useEffect(() => {
         async function fetchData() {
-          // You can await here
-          await getUsers()
-          // ...
+            // You can await here
+            await getUsers()
+            // ...
         }
         fetchData();
-      }, []);
+    }, []);
 
-    const getUsers = async() => {
-        const x = await axios.get('https://reqres.in/api/users?page=2');
+    const getUsers = async () => {
+        const x = await getAllUsers(); //await axios.get('https://reqres.in/api/users?page=2');
         console.log(x)
         console.log('Method called')
         const usersList = x.data.data;

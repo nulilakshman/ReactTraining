@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-
+import {getUserDetailsById} from '../../api/userapi'
 const UserInformation = () => {
     let params = useParams()
     const [userDetails, setUserDetails] = useState({});
@@ -15,7 +15,7 @@ const UserInformation = () => {
 
     const getUserDetails = async () => {
         setShowLoader(true);
-        const userData = await axios.get(`https://reqres.in/api/users/${params.id}`)
+        const userData = await getUserDetailsById(params.id) //await axios.get(`https://reqres.in/api/users/${params.id}`)
         //console.log('userData', userData)
         //console.log('userData.data', userData.data)
         //console.log('userData.data.data', userData.data.data)

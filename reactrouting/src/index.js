@@ -5,13 +5,13 @@ import App from './App';
 import Home from './Home';
 import About from './About';
 import Dashboard from './Dashboard';
-import Users from './Users';
+import Users from './components/Users/Users';
 import ErrorPage from './ErrorPage';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import UserInformation from './UserInformation';
+import UserInformation from './components/Users/UserInformation';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
