@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import { Link, Outlet } from 'react-router-dom';
 import Footer from './Footer';
-
 function App() {
   return (
     <div className="App">
@@ -10,6 +9,7 @@ function App() {
         <h1>React Learnings</h1>
       </div>
       <Link to='/home'>Home</Link> |
+      <Link to='/products'>Products</Link> |
       <Link to='/about'>About Us</Link> |
       <Link to='/about/10'>About Us With value</Link> |
       <Link to='/about/username/testuser/uid/45'>About Us With name</Link> |

@@ -1,7 +1,7 @@
-export function addItemToCart(selectedproduct) {
+export function addItemToCart(product) {
     debugger
-    console.log(selectedproduct)
-    const obj = { selectedproduct: selectedproduct, type: 'ADD-TO-CART' }
+    console.log(product)
+    const obj = { selectedproduct: product, type: 'ADD-TO-CART' }
     return obj;
 }
 

@@ -12,29 +12,34 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UserInformation from './components/Users/UserInformation';
-
+import { Provider } from 'react-redux'
+import store from './store';
+import ProductsList from './components/Products/ProductsList';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App />} >
-          <Route path='/home' element={<Home />} ></Route>
-          <Route path='/users' element={<Users />} ></Route>
-          <Route path='/userinfo' element={<UserInformation />} >
-            <Route path='uname/:name/uid/:id' element={<About />}></Route>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<App />} >
+            <Route path='/home' element={<Home />} ></Route>
+            <Route path='/products' element={<ProductsList />} ></Route>
+            <Route path='/users' element={<Users />} ></Route>
+            <Route path='/userinfo' element={<UserInformation />} >
+              <Route path='uname/:name/uid/:id' element={<About />}></Route>
+            </Route>
+            <Route path='/about' element={<About />} >
+              <Route path=':id' element={<About />} ></Route>
+              <Route path='username/:name/uid/:id' element={<About />}></Route>
+            </Route>
+            <Route path='/contactus' element={<p>Contact Here</p>} ></Route>
+            <Route path='*' element={<ErrorPage></ErrorPage>} ></Route>
           </Route>
-          <Route path='/about' element={<About />} >
-            <Route path=':id' element={<About />} ></Route>
-            <Route path='username/:name/uid/:id' element={<About />}></Route>
-          </Route>
-          <Route path='/contactus' element={<p>Contact Here</p>} ></Route>
-          <Route path='*' element={<ErrorPage></ErrorPage>} ></Route>
-        </Route>
 
-      </Routes>
-      {/* <App /> */}
-    </BrowserRouter>
+        </Routes>
+        {/* <App /> */}
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
