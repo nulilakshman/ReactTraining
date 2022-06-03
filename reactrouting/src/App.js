@@ -2,11 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import { Link, Outlet } from 'react-router-dom';
 import Footer from './Footer';
+import CartSummary from './components/Cart/CartSummary';
 function App() {
   return (
     <div className="App">
       <div>
-        <h1>React Learnings</h1>
+        <h1>React Learnings</h1> <CartSummary></CartSummary>
       </div>
       <Link to='/home'>Home</Link> |
       <Link to='/products'>Products</Link> |

@@ -1,8 +1,10 @@
 import React from "react"
 import './footer.css'
+import CartSummary from "./components/Cart/CartSummary"
 const Footer = () => {
     return (
         <div className="footer-basic">
+            <CartSummary />
             <footer>
                 <div className="social">
                     <a href="#"><i className="icon ion-social-instagram"></i></a>
