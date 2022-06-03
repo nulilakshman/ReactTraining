@@ -3,7 +3,6 @@ const initialState = {
 }
 
 const ProductWishListReducer = (state = [], action) => {
-    debugger
     if (action.type === 'ADD-TO-WISHLIST') {
         const items = [...state, action.selectedproduct]
         return items;

@@ -1,11 +1,5 @@
 
-const initialState = {
-    items: []
-}
-
 const cartItemsReducer = (state = [], action) => {
-   
-    debugger
     if (action.type === 'ADD-TO-CART') {
         //state.push(action.selectedproduct)
         const items = [...state, action.selectedproduct]

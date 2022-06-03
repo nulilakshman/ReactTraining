@@ -15,6 +15,7 @@ import UserInformation from './components/Users/UserInformation';
 import { Provider } from 'react-redux'
 import store from './store';
 import ProductsList from './components/Products/ProductsList';
+import UsersList from './components/Users/UsersList';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -25,6 +26,7 @@ root.render(
             <Route path='/home' element={<Home />} ></Route>
             <Route path='/products' element={<ProductsList />} ></Route>
             <Route path='/users' element={<Users />} ></Route>
+            <Route path='/users-reducer' element={<UsersList />} ></Route>
             <Route path='/userinfo' element={<UserInformation />} >
               <Route path='uname/:name/uid/:id' element={<About />}></Route>
             </Route>
