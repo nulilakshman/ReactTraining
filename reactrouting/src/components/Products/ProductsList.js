@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import { addItemToCart, removeItemFromCart } from "../../actions"
 
 const ProductsList = ({ cartItems, addItems, removeItemFromCart }) => {
-    debugger
     console.log('cartItems', cartItems)
     const addItemToStore = () => {
         const product = { id: 10001, name: 'Milk' };
@@ -20,7 +19,8 @@ const ProductsList = ({ cartItems, addItems, removeItemFromCart }) => {
 }
 
 const mapStateToProps = (state) => ({
-    cartItems: state
+    cartItems: state.cartItemsReducer,
+  //  wishListItems:state.
 })
 
 const mapDispatchToProps = {

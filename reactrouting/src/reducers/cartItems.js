@@ -4,8 +4,7 @@ const initialState = {
 }
 
 const cartItemsReducer = (state = [], action) => {
-    console.log(state)
-    console.log(action)
+   
     debugger
     if (action.type === 'ADD-TO-CART') {
         //state.push(action.selectedproduct)
