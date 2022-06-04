@@ -1,4 +1,7 @@
 # Getting Started with Create React App
+http://deploy-sample-aws-react-app.s3-website-us-west-1.amazonaws.com/
+
+https://deploy-react-app-2367f.web.app/products
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
