@@ -18,7 +18,7 @@ const AddProducts = () => {
         <React.Fragment>
             
             <div id="layout-wrapper">
-                <h2>Capstone</h2>
+                <h2>Ecommerce-Capstone</h2>
 
                 <div className="main-content">
 
@@ -29,7 +29,7 @@ const AddProducts = () => {
                                 <Col lg="12">
                                     <Card>
                                         <CardBody>
-                                            <CardTitle>Create Inventory Request</CardTitle>
+                                            <CardTitle>Add Products</CardTitle>
                                             <Form>
                                                 <Row>
                                                     <Col lg="6">
