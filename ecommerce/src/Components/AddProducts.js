@@ -18,7 +18,7 @@ const AddProducts = () => {
         <React.Fragment>
             
             <div id="layout-wrapper">
-                <h2>Thanos</h2>
+                <h2>Capstone</h2>
 
                 <div className="main-content">
 
