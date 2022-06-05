@@ -16,13 +16,9 @@ import {
 const AddProducts = () => {
     return (
         <React.Fragment>
-            
             <div id="layout-wrapper">
-                <h2>Ecommerce-Capstone</h2>
-
+                <h2></h2>
                 <div className="main-content">
-
-
                     <div className="page-content">
                         <Container fluid>
                             <Row>
@@ -57,17 +53,13 @@ const AddProducts = () => {
                                                 </Row>
                                             </Form>
                                         </CardBody>
-
                                     </Card>
                                 </Col>
                             </Row>
                         </Container>
                     </div>
                 </div>
-
             </div>
-
-           
         </React.Fragment>
     )
 }

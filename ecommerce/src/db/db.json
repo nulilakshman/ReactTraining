@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "json-server",
+      "phone": "typicode"
+    },
+    {
+      "id": 2,
+      "name": "test-user-2",
+      "phone": "test-user-2"
+    },
+    {
+      "id": 3,
+      "name": "test-user-3",
+      "phone": "test-user-3"
+    },
+    {
+      "name": "test-user-4",
+      "phone": "test-user-4",
+      "id": 4
+    },
+    {
+      "name": "test-user-4",
+      "phone": "test-user-4",
+      "id": 5
+    },
+    {
+      "name": "test-user-6",
+      "phone": "test-user-6",
+      "id": 6
+    }
+  ]
+}

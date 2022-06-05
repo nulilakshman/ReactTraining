@@ -3,12 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import AddProducts from './Components/AddProducts';
+import AddProducts from './Components/Products/AddProducts';
+import NotFound from './Components/NotFound';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AddProducts />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<App />} >
+          <Route path='/add-product' element={<AddProducts />} ></Route>
+        </Route>
+        <Route path='*' element={<NotFound></NotFound>} ></Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

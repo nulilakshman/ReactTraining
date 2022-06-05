@@ -1,13 +1,14 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div class="header">
-            <a href="#default" class="logo">CompanyLogo</a>
+            <a href="#default" class="logo">Ecommerce-Capstone</a>
             <div class="header-right">
-                <a class="active" href="#home">Home</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
+                <Link to='/'>Home</Link> 
+                <Link to='/login'>Login</Link> 
+                <Link to='/signup'>Signup</Link> 
+                <Link to='/add-product'>Add Product</Link> 
             </div>
         </div>
     )
