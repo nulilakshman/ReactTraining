@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import AddProducts from './Components/Products/AddProducts';
 import NotFound from './Components/NotFound';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+console.log('config', process.env.REACT_APP_API_BASE_URL)
 root.render(
   <React.StrictMode>
     <BrowserRouter>
