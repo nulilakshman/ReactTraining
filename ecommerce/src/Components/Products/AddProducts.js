@@ -137,9 +137,9 @@ const AddProducts = () => {
                                                     name="category"
                                                 >
                                                     <option value="0">--Select--</option>
-                                                    <option value="1">Dairy</option>
-                                                    <option value="2">Vegetables</option>
-                                                    <option value="3">Munchies</option>
+                                                    <option value="Dairy">Dairy</option>
+                                                    <option value="Vegetables">Vegetables</option>
+                                                    <option value="Munchies">Munchies</option>
                                                 </Input>
                                                 {
                                                     isSubmitted && !product.category ? (<div className="invalid-feedback">
