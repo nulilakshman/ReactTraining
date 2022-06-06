@@ -19,7 +19,7 @@ import { saveProduct } from '../../Api'
 const AddProducts = () => {
     const navigate = useNavigate();
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [errors, setErrors] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
     const [product, setProduct] = useState({
         productName: '',
         description: '',
@@ -177,6 +177,12 @@ const AddProducts = () => {
                                                             navigate(`/manage-products`);
                                                         }}
                                                     >Cancel</Button>
+                                                    {
+                                                        isLoading ? <div class="spinner-border text-primary" role="status">
+                                                            <span class="sr-only">Loading...</span>
+                                                        </div>
+                                                            : null
+                                                    }
                                                     <Button
                                                         style={{ float: 'right', marginRight: '5px' }}
                                                         type="submit"
@@ -191,9 +197,12 @@ const AddProducts = () => {
                                                                 return;
                                                             }
                                                             try {
-                                                                await saveProduct({...product})
+                                                                setIsLoading(true);
+                                                                await saveProduct({ ...product })
+                                                                setIsLoading(false);
                                                                 navigate(`/manage-products`);
                                                             } catch (e) {
+                                                                setIsLoading(false);
                                                             }
                                                         }}
                                                     >
