@@ -14,6 +14,7 @@ import {
 } from "reactstrap"
 import { Link, withRouter, useNavigate, useParams } from "react-router-dom";
 import * as Utility from '../../Common/Util'
+import { saveProduct } from '../../Api'
 
 const AddProducts = () => {
     const navigate = useNavigate();
@@ -70,7 +71,6 @@ const AddProducts = () => {
                         <Col lg="12">
                             <Card>
                                 <CardTitle>Add Products</CardTitle>
-
                                 <CardBody>
                                     <Form>
                                         <Row>
@@ -191,6 +191,7 @@ const AddProducts = () => {
                                                                 return;
                                                             }
                                                             try {
+                                                                await saveProduct({...product})
                                                                 navigate(`/manage-products`);
                                                             } catch (e) {
                                                             }
