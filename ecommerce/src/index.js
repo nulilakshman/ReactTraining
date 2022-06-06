@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import AddProducts from './Components/Products/AddProducts';
 import ManageProducts from './Components/Products/ManageProducts';
+import Home from './Components/Home/Index';
 import NotFound from './Components/NotFound';
 import SignUp from './Components/SignUp/SignUp';
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +16,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />} >
+          <Route path='' element={<Home />} ></Route>
           <Route path='/add-product' element={<AddProducts />} ></Route>
           <Route path='/manage-products' element={<ManageProducts />} ></Route>
           <Route path='/SignUp' element={<SignUp />} ></Route>
