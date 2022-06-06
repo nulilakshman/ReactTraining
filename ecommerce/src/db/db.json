@@ -4,6 +4,11 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": " my-json-server",
+      "author": "typicode"
     }
   ],
   "comments": [
@@ -11,6 +16,11 @@
       "id": 1,
       "body": "some comment",
       "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 2
     }
   ],
   "profile": {
@@ -46,6 +56,17 @@
       "name": "test-user-6",
       "phone": "test-user-6",
       "id": 6
+    },
+    {
+      "name": "test-user-7",
+      "phone": "test-user-7",
+      "id": 7
+    },
+    {
+      "name": "1233333",
+      "phone": "11111",
+      "role": "Admin",
+      "id": 8
     }
   ]
 }
