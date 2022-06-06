@@ -36,11 +36,9 @@ const SignUp = () => {
 
     const onInput = (event) => {
         const obj = { ...details };       
-        console.log(event.target.name);
-        console.log(event.target.value)
         obj[event.target.name] = event.target.value;
         setDetails({ ...obj });
-        validateFields();
+        
 
     }
 
@@ -88,6 +86,8 @@ const SignUp = () => {
         
     }
 
+   
+
     const invokeApi=()=>{
 
         axios.post('http://localhost:4120/users', {
@@ -111,6 +111,7 @@ const SignUp = () => {
             if(validateFields()){
                 invokeApi();
             }
+            validateFields();
     }
 
     return (
