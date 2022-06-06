@@ -7,7 +7,12 @@ function App() {
   return (
     <div id="layout-wrapper">
       <Header />
-      <Outlet></Outlet>
+      <div id="layout-wrapper">
+        <div className="main-content">
+          <Outlet></Outlet>
+
+        </div>
+      </div>
       <Footer />
     </div>
   );
