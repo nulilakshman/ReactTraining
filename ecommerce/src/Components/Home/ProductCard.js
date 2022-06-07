@@ -9,6 +9,8 @@ const ProductCard = ({ productName, imageUrl, category, price, id }) => {
                     <h5 class="card-title">{productName}</h5>
                     <p class="card-text">{category} - {price} Rs</p>
                     <a href="#" class="btn btn-primary">Add To Cart</a>
+                    
+                    <button style={{float:"right"}} class="btn btn-outline-success"><i class="fa fa-heart-o"></i></button>
                 </div>
             </div>
         </Col>
