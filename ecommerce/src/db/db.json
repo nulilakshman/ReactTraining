@@ -1,31 +1,67 @@
 {
   "products": [
     {
-      "productName": "fgsdfgdfgdfg",
-      "description": "sdfsdfdsf\nsdf\ndsf\nsdfdsf",
-      "price": "444",
-      "imageUrl": "dsfsdfsdf",
-      "category": "2",
+      "productName": "Jersey Toned Fresh Milk 500ml",
+      "description": "Healthy and delicious\nA wholesome blend of great nutrition and rich taste\nPure in quality\nPower-packed with calcium\nExcellent for preparing tea, coffee or desserts",
+      "price": "25",
+      "imageUrl": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/full_screen/pro_295209.jpg",
+      "category": "Dairy",
       "status": 1,
-      "id": 1
+      "id": 4
     },
     {
-      "productName": "asdasdas",
-      "description": "werwer",
-      "price": "23",
-      "imageUrl": "rwerqwer",
-      "category": "2",
+      "productName": "Red & Yellow Capsicum",
+      "description": "Mushtil No 29, Kila No 25, GOPALPUR, GOPALPUR, Gurgaon,\nHaryana, 122001",
+      "price": "85",
+      "imageUrl": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/full_screen/pro_300635.jpg",
+      "category": "Vegetables",
       "status": 1,
-      "id": 2
+      "id": 9
     },
     {
-      "productName": "asdsad",
-      "description": "asda\nasd\nsad",
-      "price": "22",
-      "imageUrl": "asdad",
-      "category": "2",
+      "productName": "Heritage Special Toned Milk (90 Days Shelf Life)",
+      "description": "Low-fat milk\nHealthy and nutritious\nHas a great taste\nIdeal to relish tea, coffee and desserts",
+      "price": "28",
+      "imageUrl": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/full_screen/pro_179137.jpg",
+      "category": "Dairy",
       "status": 1,
-      "id": 3
+      "id": 8
+    },
+    {
+      "productName": "Too Yumm Baked Potato Stix Crisps - Buy 1 Get 1 Free",
+      "description": "offer\n\nBuy 1 Get 1 Free\nkey features\n\nBaked not fried\nZero Trans Fat\nProtein Goodness\nPerfect to eat anytime of the day",
+      "price": "50",
+      "imageUrl": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/full_screen/pro_448554.jpg",
+      "category": "Munchies",
+      "status": 1,
+      "id": 7
+    },
+    {
+      "productName": "Bingo Cream & Onion Potato Chips - Buy 2 Get 1 Free",
+      "description": "offer\n\nBuy 2 Get 1 Free\nunit\n\n3x52 g\nmanufacturer details\n\nFor Manufacturer, FSSAI, Nutritional & Shelf Life details, please refer to the individual products.",
+      "price": "40",
+      "imageUrl": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/full_screen/pro_429819.jpg",
+      "category": "Munchies",
+      "status": 1,
+      "id": 6
+    },
+    {
+      "productName": "Desi Tomato",
+      "description": "Hands On Trades Pvt. Ltd,Mushtil No 29, Kila No 25, GOPALPUR, GOPALPUR, Gurgaon,\nHaryana, 122001",
+      "price": "50",
+      "imageUrl": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/full_screen/pro_445675.jpg",
+      "category": "Vegetables",
+      "status": 1,
+      "id": 5
+    },
+    {
+      "productName": "Red Cabbage",
+      "description": "Hands On Trades Pvt. Ltd.,301-B, Hemkunt Chambers 89, Nehru Place, New Delhi-110019",
+      "price": "62",
+      "imageUrl": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/full_screen/pro_189833.jpg",
+      "category": "Vegetables",
+      "status": 1,
+      "id": 10
     }
   ],
   "comments": [
