@@ -11,6 +11,7 @@ import ManageProducts from './Components/Products/ManageProducts';
 import Home from './Components/Home/Index';
 import NotFound from './Components/NotFound';
 import SignUp from './Components/SignUp/SignUp';
+import Users from './Components/ManageUsers/Users';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -21,6 +22,8 @@ root.render(
           <Route path='/add-product' element={<AddProducts />} ></Route>
           <Route path='/manage-products' element={<ManageProducts />} ></Route>
           <Route path='/SignUp' element={<SignUp />} ></Route>
+          <Route path='/Users' element={<Users />} ></Route>
+
         </Route>
         <Route path='*' element={<NotFound></NotFound>} ></Route>
       </Routes>
