@@ -7,6 +7,12 @@ const ProductWishListReducer = (state = initialState, action) => {
         const favItems = [...state.items, action.payload]
         return { items: favItems };
     }
+    if (action.type === 'REMOVE-FROM-FAVOUTITE') {
+        debugger
+        const items = [...state.items]
+        items.splice(items.indexOf(action.payload), 1);
+        return { items: items };
+    }
 
     return state;
 }
