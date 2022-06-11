@@ -11,20 +11,24 @@ import ManageProducts from './Components/Products/ManageProducts';
 import Home from './Components/Home/Index';
 import NotFound from './Components/NotFound';
 import SignUp from './Components/SignUp/SignUp';
+import { Provider } from 'react-redux';
+import store from './Store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App />} >
-          <Route path='' element={<Home />} ></Route>
-          <Route path='/add-product' element={<AddProducts />} ></Route>
-          <Route path='/manage-products' element={<ManageProducts />} ></Route>
-          <Route path='/SignUp' element={<SignUp />} ></Route>
-        </Route>
-        <Route path='*' element={<NotFound></NotFound>} ></Route>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<App />} >
+            <Route path='' element={<Home />} ></Route>
+            <Route path='/add-product' element={<AddProducts />} ></Route>
+            <Route path='/manage-products' element={<ManageProducts />} ></Route>
+            <Route path='/SignUp' element={<SignUp />} ></Route>
+          </Route>
+          <Route path='*' element={<NotFound></NotFound>} ></Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
