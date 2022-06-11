@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios";
+import { saveUsers } from '../../Api';
 import {
     Button,
     Row,
@@ -14,6 +15,7 @@ import {
     Input,
     FormFeedback
 } from "reactstrap"
+import Users from "../ManageUsers/Users";
 
 const SignUp = () => {
 
@@ -24,6 +26,7 @@ const SignUp = () => {
         role: ''
     });
 
+    const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState({
 
         name: '',
@@ -35,84 +38,87 @@ const SignUp = () => {
     const [showMessage, setShowMessage] = useState();
 
     const onInput = (event) => {
-        const obj = { ...details };       
+        const obj = { ...details };
         obj[event.target.name] = event.target.value;
         setDetails({ ...obj });
-        
+
 
     }
 
-    const validateFields =()=>{
+    const validateFields = () => {
 
-        const errorFields={...errors};
+        const errorFields = { ...errors };
 
-        let isValid=true;
-        if(details.name===""){
-            errorFields.name="enter the valid name";
-            isValid=false;
+        let isValid = true;
+        if (details.name === "") {
+            errorFields.name = "enter the valid name";
+            isValid = false;
         }
-        else if(details.name.length > 45 ){
-            errorFields.name="the data should not be more than 45";
-            isValid=false;
+        else if (details.name.length > 45) {
+            errorFields.name = "the data should not be more than 45";
+            isValid = false;
         }
-        else{
-            errorFields.name="";
-        }
-
-        if(details.phone===""){
-            errorFields.phone="enter a valid phone number";
-            isValid=false;
-            
-        }
-        else if(details.phone.length > 10){
-            errorFields.phone="numbers should not be more than 10";
-            isValid=false;
-        }
-        else{
-            errorFields.phone="";
+        else {
+            errorFields.name = "";
         }
 
-        if(details.role===" Select Role" || details.role===""){
-            errorFields.role="select role";
-            isValid=false;
+        if (details.phone === "") {
+            errorFields.phone = "enter a valid phone number";
+            isValid = false;
 
         }
-        else{
-            errorFields.role="";
+        else if (details.phone.length > 10) {
+            errorFields.phone = "numbers should not be more than 10";
+            isValid = false;
+        }
+        else {
+            errorFields.phone = "";
         }
 
-        setErrors({...errorFields});
+        if (details.role === " Select Role" || details.role === "") {
+            errorFields.role = "select role";
+            isValid = false;
+
+        }
+        else {
+            errorFields.role = "";
+        }
+
+        setErrors({ ...errorFields });
         return isValid;
-        
+
     }
 
-   
 
-    const invokeApi=()=>{
 
-        axios.post('http://localhost:4120/users', {
-            name: details.name,
-            phone: details.phone,
-            role:details.role
-          })
-          .then(function (response) {
-
-          alert('sucessful');
-            console.log(response);
-          })
-          .catch(function (error) {
-              alert('error');
-            console.log(error);
-          });
-    }
+    /*  const invokeApi=()=>{
+  
+          axios.post('http://localhost:4120/users', {
+              name: details.name,
+              phone: details.phone,
+              role:details.role
+            })
+            .then(function (response) {
+  
+            alert('sucessful');
+              console.log(response);
+            })
+            .catch(function (error) {
+                alert('error');
+              console.log(error);
+            });
+      } */
 
     const onButtonClicked = () => {
-        
-            if(validateFields()){
-                invokeApi();
-            }
-            validateFields();
+
+        if (validateFields()) {
+            //invokeApi();
+            return;
+        }
+        validateFields();
     }
+
+
 
     return (
         <React.Fragment>
@@ -125,7 +131,7 @@ const SignUp = () => {
                                 <Col lg="12">
                                     <Card>
                                         <CardBody>
-                                            <CardTitle>SignUp</CardTitle>
+                                            <CardTitle>Sign Up</CardTitle>
                                             <Form>
                                                 <Row>
                                                     <Col lg="6">
@@ -146,7 +152,7 @@ const SignUp = () => {
                                                     </Col>
                                                     <Col lg="6">
                                                         <Label for=" phoneNumber" className="col-sm-6 col-form-Label">
-                                                            phoneNumber *
+                                                            Phone Number *
                                                         </Label>
                                                         <Input
                                                             type="text"
@@ -173,7 +179,7 @@ const SignUp = () => {
                                                             onChange={onInput}
                                                             value={details.role}
                                                         >
-                                                            
+
                                                             <option>
                                                                 Select Role
                                                             </option>
@@ -191,9 +197,32 @@ const SignUp = () => {
                                                 </Row>
                                                 <Row>
                                                     <Col lg="6">
+                                                        {
+                                                            isLoading ? <div class="spinner-border text-primary" role="status">
+                                                                <span class="sr-only">Loading...</span>
+                                                            </div>
+                                                                : null
+                                                        }
                                                         <Button
                                                             color="primary"
-                                                            onClick={onButtonClicked}
+                                                            onClick={async (e) => {
+                                                                e.preventDefault();
+
+
+                                                                if (!validateFields()) {
+                                                                    return;
+                                                                }
+                                                                try {
+                                                                    setIsLoading(true);
+                                                                    
+                                                                    await saveUsers({ ...details})
+                                                                    setIsLoading(false);
+
+                                                                } catch (e) {
+                                                                    setIsLoading(false);
+                                                                }
+                                                            }
+                                                            }
                                                         >
                                                             Save
                                                         </Button>
