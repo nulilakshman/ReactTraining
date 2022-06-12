@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { getAllProducts } from "../../Api"
 import ProductCard from "./ProductCard";
 import { Row, Col, Button } from "reactstrap"
-import { makeAsFavourite, removeFavourite, addToCart } from "../../Actions";
+import { makeAsFavourite, removeFavourite, addToCart, removeCart } from "../../Actions";
 import { connect } from "react-redux";
-const Home = ({ favouriteItems, cartItems, addToFavourite, removeFavourite, addToCart }) => {
+const Home = ({ favouriteItems, cartItems, addToFavourite, removeFavourite, addToCart, removeCart }) => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         async function fetchData() {
@@ -33,6 +33,7 @@ const Home = ({ favouriteItems, cartItems, addToFavourite, removeFavourite, addT
                             addToFavourites={addItemToFavourite}
                             addToCart={addToCart}
                             cartItems={cartItems}
+                            removeCart={removeCart}
                             {...x}
                         ></ProductCard>
                     })
@@ -52,7 +53,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
     addToFavourite: makeAsFavourite,
     removeFavourite: removeFavourite,
-    addToCart: addToCart
+    addToCart: addToCart,
+    removeCart: removeCart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

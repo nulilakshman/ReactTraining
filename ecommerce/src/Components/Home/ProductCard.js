@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "reactstrap"
-const ProductCard = ({ favourites, cartItems, productName, imageUrl, category, price, id, addToFavourites, removeFavourite, addToCart }) => {
+const ProductCard = ({ favourites, cartItems, productName, imageUrl, category, price, id, addToFavourites, removeFavourite, addToCart, removeCart }) => {
     const isMarkedFavourite = (id) => {
         return favourites.indexOf(id) !== -1;
     }
 
     const isItemInCart = (id) => {
-        return cartItems.indexOf(id) !== -1;
+        return cartItems.findIndex(x => x.id === id) !== -1;
+    }
+
+    const getQty = (id) => {
+        return cartItems.find(x => x.id === id).qty;
     }
 
     return (
@@ -19,8 +23,8 @@ const ProductCard = ({ favourites, cartItems, productName, imageUrl, category, p
 
                     {
                         isItemInCart(id) ? <div>
-                            <button onClick={() => addToCart(id)} class="btn btn-primary">-</button>0
-                            <button onClick={() => addToCart(id)} class="btn btn-primary">+</button>
+                            <button onClick={() => removeCart(id)} style={{ marginRight: '5px' }} class="btn btn-primary">-</button>{getQty(id)}
+                            <button onClick={() => addToCart(id)} style={{ marginLeft: '5px' }} class="btn btn-primary">+</button>
                         </div>
                             :
                             <button onClick={() => addToCart(id)} class="btn btn-primary">Add To Cart</button>

@@ -7,7 +7,10 @@ export function removeFavourite(item) {
 }
 
 export function addToCart(item) {
-    debugger
-    return { payload: item, type: 'ADD-TO-CART' }
+    return { payload: { id: item, qty: 1 }, type: 'ADD-TO-CART' }
+}
+
+export function removeCart(item) {
+    return { payload: { id: item }, type: 'REMOVE-FROM-CART' }
 }
 
