@@ -6,6 +6,11 @@ const CartSummary = ({ cartItems }) => {
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
             <span class="badge badge-light">{cartItems.length > 0 ? cartItems.length : ''}</span>
+            <br></br>
+            <i class="fa fa-inr" aria-hidden="true"></i>
+            <span class="badge badge-light">{cartItems.length > 0 ? cartItems.reduce(function (sum, product) {
+                return sum + parseInt(product.totalPrice,10);
+            }, 0) : ''}</span>
         </button>
     )
 }
