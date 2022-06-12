@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "reactstrap"
-const ProductCard = ({ favourites, productName, imageUrl, category, price, id, addToFavourites, removeFavourite }) => {
+const ProductCard = ({ favourites, cartItems, productName, imageUrl, category, price, id, addToFavourites, removeFavourite, addToCart }) => {
     const isMarkedFavourite = (id) => {
         return favourites.indexOf(id) !== -1;
+    }
+
+    const isItemInCart = (id) => {
+        return cartItems.indexOf(id) !== -1;
     }
 
     return (
@@ -12,7 +16,15 @@ const ProductCard = ({ favourites, productName, imageUrl, category, price, id, a
                 <div class="card-body">
                     <h5 class="card-title">{productName}</h5>
                     <p class="card-text">{category} - {price} Rs</p>
-                    <a href="#" class="btn btn-primary">Add To Cart</a>
+
+                    {
+                        isItemInCart(id) ? <div>
+                            <button onClick={() => addToCart(id)} class="btn btn-primary">-</button>0
+                            <button onClick={() => addToCart(id)} class="btn btn-primary">+</button>
+                        </div>
+                            :
+                            <button onClick={() => addToCart(id)} class="btn btn-primary">Add To Cart</button>
+                    }
                     {
                         isMarkedFavourite(id) ? <button onClick={() => removeFavourite(id)} style={{ float: "right" }} class="btn btn-outline-success">
                             <i class="fa fa-heart"></i>

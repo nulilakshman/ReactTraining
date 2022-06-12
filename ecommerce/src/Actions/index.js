@@ -5,3 +5,9 @@ export function makeAsFavourite(item) {
 export function removeFavourite(item) {
     return { payload: item, type: 'REMOVE-FROM-FAVOUTITE' }
 }
+
+export function addToCart(item) {
+    debugger
+    return { payload: item, type: 'ADD-TO-CART' }
+}
+

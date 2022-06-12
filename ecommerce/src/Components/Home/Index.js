@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { getAllProducts } from "../../Api"
 import ProductCard from "./ProductCard";
 import { Row, Col, Button } from "reactstrap"
-import { makeAsFavourite, removeFavourite } from "../../Actions";
+import { makeAsFavourite, removeFavourite, addToCart } from "../../Actions";
 import { connect } from "react-redux";
-const Home = ({ favouriteItems, addToFavourite, removeFavourite }) => {
+const Home = ({ favouriteItems, cartItems, addToFavourite, removeFavourite, addToCart }) => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         async function fetchData() {
@@ -28,7 +28,13 @@ const Home = ({ favouriteItems, addToFavourite, removeFavourite }) => {
             <Row>
                 {
                     products.map(x => {
-                        return <ProductCard favourites={favouriteItems} removeFavourite={removeItemFromFavourite} addToFavourites={addItemToFavourite}  {...x}></ProductCard>
+                        return <ProductCard favourites={favouriteItems}
+                            removeFavourite={removeItemFromFavourite}
+                            addToFavourites={addItemToFavourite}
+                            addToCart={addToCart}
+                            cartItems={cartItems}
+                            {...x}
+                        ></ProductCard>
                     })
                 }
             </Row>
@@ -38,13 +44,15 @@ const Home = ({ favouriteItems, addToFavourite, removeFavourite }) => {
 
 
 const mapStateToProps = (state) => ({
-    favouriteItems: state.ProductWishListReducer.items
+    favouriteItems: state.ProductWishListReducer.items,
+    cartItems: state.CartReducer.items
 
 });
 
 const mapDispatchToProps = {
     addToFavourite: makeAsFavourite,
-    removeFavourite: removeFavourite
+    removeFavourite: removeFavourite,
+    addToCart: addToCart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

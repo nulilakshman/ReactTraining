@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import ProductWishListReducer from "./ProductWishListReducer";
-const rootReducer = combineReducers({ ProductWishListReducer })
+import CartReducer from "./CartReducer";
+const rootReducer = combineReducers({ ProductWishListReducer, CartReducer })
 
 export default rootReducer;
