@@ -9,6 +9,7 @@ const CartReducer = (state = initialState, action) => {
         const item = items.find(x => x.id === action.payload.id);
         if (item) {
             item.qty++;
+            item.totalPrice = item.qty * item.productprice;
             const allItems = [...items];
             return { items: allItems };
         }
